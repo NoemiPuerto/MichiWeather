@@ -1,0 +1,25 @@
+nav{
+    height: 100px;
+    margin: 20px;
+    
+}
+.logo{
+    width: 200px;
+    height: 200px;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    max-width: 100%;
+    max-height: 50px;
+  }
+  .container-fluid {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+  .logo {
+    width: 100px;
+    height: 100px;
+  }
+}
+
