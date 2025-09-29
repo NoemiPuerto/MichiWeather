@@ -1,25 +1,121 @@
-nav{
-    height: 100px;
-    margin: 20px;
-    
-}
-.logo{
-    width: 200px;
-    height: 200px;
+/* 🔹 Importar Inter desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+/* 🔹 General */
+body {
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  background: #f5f5f5;
+  color: #333;
+  font-weight: 400; /* Peso normal por defecto */
 }
 
+/* 🔹 Títulos */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-weight: 700; /* Negrita */
+}
+
+/* 🔹 Navbar */
+.logo {
+  width: 150px;   /* logo pequeño */
+  height: auto;
+}
+.moon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.profile {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+/* 🔹 Círculo central del clima */
+.weather-circle {
+  position: relative; /* Cambié de right a relative para posicionar el gatito */
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  overflow: hidden; /* recorta en círculo */
+  margin: 20px auto;
+}
+
+/* Fondo del círculo */
+.weather-circle .background {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* ajusta la imagen */
+}
+
+/* Gatito encima del fondo */
+.weather-circle .cat {
+  position: absolute;
+  bottom: 0;  
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+}
+
+/* 🔹 Temperaturas */
+.max {
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-weight: 700;
+}
+.min {
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  color: gray;
+}
+
+/* 🔹 Indicadores (círculos pequeños) */
+.circle {
+  background: #ccc;
+  border-radius: 50%;
+  width: 100px;   /* ancho fijo */
+  height: 100px;  /* alto fijo */
+  display: flex;  
+  flex-direction: column; /* icono arriba, texto abajo */
+  align-items: center;
+  justify-content: center;
+  margin: 10px auto; /* centrado */
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 0.9rem;
+}
+
+.circle i {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+/* 🔹 Responsive móvil */
 @media (max-width: 768px) {
-  .navbar {
-    max-width: 100%;
-    max-height: 50px;
+  .weather-circle {
+    width: 180px;
+    height: 180px;
   }
-  .container-fluid {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-  .logo {
-    width: 100px;
-    height: 100px;
+  .weather-circle .cat {
+    width: 120px;
+  }
+  h1 {
+    font-size: 2rem;
   }
 }
 
+/* 🔹 Responsive escritorio */
+@media (min-width: 769px) {
+  main {
+    max-width: 900px;
+  }
+  .weather-circle {
+    width: 300px;
+    height: 300px;
+  }
+  .weather-circle .cat {
+    width: 180px;
+  }
+  h1 {
+    font-size: 3rem;
+  }
+}
