@@ -20,17 +20,16 @@
   <!-- 🔹 NAVBAR -->
   <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container-fluid">
-
       <!-- Logo -->
       <a class="navbar-brand" href="#">
         <img class="logo" src="./assets/Logo/MichiWeather.png" alt="MichiWeather logo">
       </a>
 
-      <!-- Botón hamburguesa -->
+      <!-- Botón menu -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
               data-bs-target="#navbarNav" aria-controls="navbarNav"
               aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+        <img class="menu" src="./assets/Iconos/menu_icon.png" alt="menu">
       </button>
 
       <!-- Contenido colapsable -->
@@ -45,7 +44,7 @@
             </button>
           </form>
           <img class="moon" src="./assets/Iconos/modo_oscuro_icon.png" alt="moon">
-          <img class="profile ms-1" src="./assets/Iconos/Porfile_icon.png" alt="perfil">
+          <img class="profile" src="./assets/Iconos/Porfile_icon.png" alt="perfil">
         </div>
 
         <!-- Menú principal -->
@@ -64,8 +63,8 @@
 
   <!-- 🔹 SECCIÓN PRINCIPAL DEL CLIMA -->
   <main class="container text-center my-4">
-    <h2>Cancún</h2>
-    <p class="text-muted">Lluvia</p>
+    <h2 class="location">Cancún</h2>
+    <h3 class="estado">Lluvia</h3>
 
     <!-- Fondo + gato -->
     <div class="weather-circle mx-auto">
@@ -73,9 +72,14 @@
       <img class="cat" src="./assets/Michis/Michi_negro/gato_lluvia.png" alt="gatito clima">
     </div>
 
-    <!-- Temperaturas -->
-    <h1>26°</h1>
-    <p><span class="max">30°</span> <span class="min">23°</span></p>
+    <!-- Temperaturas principales y secundarias -->
+    <div class="temp-container">
+      <h1 class="main-temp">26°</h1>
+      <div class="temp-minmax">
+        <span class="max">30°</span>
+        <span class="min">23°</span>
+      </div>
+    </div>
 
     <!-- Botones -->
     <div class="btn-group my-3">
@@ -86,24 +90,24 @@
     <!-- Pronóstico por horas -->
     <div class="hourly-forecast d-flex justify-content-between flex-nowrap overflow-auto my-3">
       <div class="hourly-item text-center">
-        <p class="hour">08:00</p>
+        <p class="hour">Now</p>
         <img class="weather-icon" src="./assets/Iconos/lluvia_icon.png" alt="lluvia">
-        <p>26°</p>
+        <p class="temp">26°</p>
       </div>
       <div class="hourly-item text-center">
         <p class="hour">11:00</p>
         <img class="weather-icon" src="./assets/Iconos/nublado_icon.png" alt="nublado">
-        <p>30°</p>
+        <p class="temp">30°</p>
       </div>
       <div class="hourly-item text-center">
         <p class="hour">14:00</p>
         <img class="weather-icon" src="./assets/Iconos/llovizna_icon.png" alt="llovizna">
-        <p>25°</p>
+        <p class="temp">25°</p>
       </div>
       <div class="hourly-item text-center">
         <p class="hour">17:00</p>
         <img class="weather-icon" src="./assets/Iconos/granizo_icon.png" alt="granizo">
-        <p>27°</p>
+        <p class="temp">27°</p>
       </div>
     </div>
 
@@ -122,6 +126,7 @@
         <p class="stat-text">30km</p>
       </div>
     </div>
+
   </main>
 
   <!-- Bootstrap JS -->
