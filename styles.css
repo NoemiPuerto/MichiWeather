@@ -6,91 +6,145 @@ body {
   font-family: 'Inter', Arial, Helvetica, sans-serif;
   background: #f5f5f5;
   color: #333;
-  font-weight: 400; /* Peso normal por defecto */
+  font-weight: 400;
 }
 
 /* 🔹 Títulos */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Inter', Arial, Helvetica, sans-serif;
-  font-weight: 700; /* Negrita */
+  font-weight: 700;
 }
 
 /* 🔹 Navbar */
+.navbar {
+  background-color: #D9D9D9;
+}
+
 .logo {
-  width: 150px;   /* logo pequeño */
+  width: 150px;
   height: auto;
 }
-.moon {
+
+.moon, .profile {
   width: 40px;
   height: 40px;
   border-radius: 50%;
 }
-.profile {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
+
+.navbar .d-flex.align-items-center > img {
+  margin-left: 5px;
+}
+
+/* 🔹 Buscador */
+.search-form {
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  width: 180px;
+  padding: 0.375rem 0.75rem;
+  transition: width 0.3s ease;
+}
+
+.search-btn i {
+  font-size: 1.4rem;
+  color: #333;
 }
 
 /* 🔹 Círculo central del clima */
 .weather-circle {
-  position: relative; /* Cambié de right a relative para posicionar el gatito */
+  position: relative;
   width: 250px;
   height: 250px;
   border-radius: 50%;
-  overflow: hidden; /* recorta en círculo */
+  overflow: hidden;
   margin: 20px auto;
 }
 
-/* Fondo del círculo */
 .weather-circle .background {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* ajusta la imagen */
+  object-fit: cover;
 }
 
-/* Gatito encima del fondo */
 .weather-circle .cat {
   position: absolute;
-  bottom: 0;  
+  bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 150px;
+  width: 180px;
 }
 
 /* 🔹 Temperaturas */
 .max {
-  font-family: 'Inter', Arial, Helvetica, sans-serif;
   font-weight: 700;
 }
 .min {
-  font-family: 'Inter', Arial, Helvetica, sans-serif;
   font-weight: 400;
   color: gray;
 }
 
-/* 🔹 Indicadores (círculos pequeños) */
-.circle {
-  background: #ccc;
-  border-radius: 50%;
-  width: 100px;   /* ancho fijo */
-  height: 100px;  /* alto fijo */
-  display: flex;  
-  flex-direction: column; /* icono arriba, texto abajo */
-  align-items: center;
-  justify-content: center;
-  margin: 10px auto; /* centrado */
-  font-family: 'Inter', Arial, Helvetica, sans-serif;
-  font-weight: 400;
+/* 🔹 Hora en pronóstico */
+.hour {
+  font-weight: 700;
+  margin-bottom: 5px;
   font-size: 0.9rem;
+  color: #333;
 }
 
-.circle i {
-  font-size: 1.5rem;
+/* 🔹 Iconos pronóstico */
+.weather-icon {
+  width: 80px;
+  height: 80px;
   margin-bottom: 5px;
+}
+
+/* 🔹 Pronóstico por horas */
+.hourly-forecast {
+  gap: 10px;
+}
+
+.hourly-item {
+  flex: 0 0 auto;
+  width: 80px;
+}
+
+/* 🔹 Indicadores */
+.stats {
+  gap: 10px;
+}
+
+.stats .circle {
+  flex: 0 0 auto;
+  width: 150px;
+  height: 150px;
+  background: #ccc;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px auto;
+}
+
+.stat-icon {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 5px;
+}
+
+.stat-text {
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #333;
 }
 
 /* 🔹 Responsive móvil */
 @media (max-width: 768px) {
+  .search-input {
+    width: 120px;
+  }
   .weather-circle {
     width: 180px;
     height: 180px;
@@ -98,24 +152,17 @@ h1, h2, h3, h4, h5, h6 {
   .weather-circle .cat {
     width: 120px;
   }
-  h1 {
-    font-size: 2rem;
+  .hourly-item .weather-icon {
+    width: 60px;
+    height: 60px;
+  }
+  .stats .circle {
+    width: 100px;
+    height: 100px;
+  }
+  .stats .stat-icon {
+    width: 60px;
+    height: 60px;
   }
 }
 
-/* 🔹 Responsive escritorio */
-@media (min-width: 769px) {
-  main {
-    max-width: 900px;
-  }
-  .weather-circle {
-    width: 300px;
-    height: 300px;
-  }
-  .weather-circle .cat {
-    width: 180px;
-  }
-  h1 {
-    font-size: 3rem;
-  }
-}
