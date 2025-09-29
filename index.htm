@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
+
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  
+
   <!-- FontAwesome (iconos) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
@@ -61,31 +61,33 @@
   </nav>
 
   <!-- 🔹 SECCIÓN PRINCIPAL DEL CLIMA -->
-  <main class="container text-center my-4">
-    <!-- Ciudad y clima -->
-    <h2>Cancún</h2>
-    <p class="text-muted">Lluvia</p>
+  <main class="container text-center my-4 contenido-escritorio">
+    <!-- 🔹 Columna izquierda: Ciudad, clima, círculo, temperaturas -->
+    <div class="info-clima">
+      <h2>Cancún</h2>
+      <p class="text-muted">Lluvia</p>
 
-    <!-- Círculo central (fondo + gato encima) -->
-    <div class="weather-circle mx-auto">
-      <!-- Fondo dinámico -->
-      <img class="background" src="./assets/Fondos/lluvioso.png" alt="fondo clima">
-      <!-- Gatito dinámico -->
-      <img class="cat" src="./assets/Michis/Michi_negro/gato_lluvia.png" alt="gatito clima">
+      <div class="weather-circle mx-auto">
+        <img class="background" src="./assets/Fondos/lluvioso.png" alt="fondo clima">
+        <img class="cat" src="./assets/Michis/Michi_negro/gato_lluvia.png" alt="gatito clima">
+      </div>
+
+      <div class="temperaturas">
+        <h1>26°</h1>
+        <p><span class="max">30°</span> <span class="min">23°</span></p>
+      </div>
     </div>
 
-    <!-- Temperaturas -->
-    <h1>26°</h1>
-    <p><span class="max">30°</span> <span class="min">23°</span></p>
-
-    <!-- Selector Hoy / Semana -->
-    <div class="btn-group my-3">
-      <button class="btn btn-dark">Hoy</button>
-      <button class="btn btn-secondary">Semana</button>
+    <!-- 🔹 Parte superior centro: Selector Hoy / Semana -->
+    <div class="selector-tiempo">
+      <div class="btn-group my-3">
+        <button class="btn btn-dark">Hoy</button>
+        <button class="btn btn-secondary">Semana</button>
+      </div>
     </div>
 
-    <!-- Pronóstico por horas -->
-    <div class="row justify-content-center my-3">
+    <!-- 🔹 Parte media centro: Pronóstico por horas -->
+    <div class="row justify-content-center my-3 pronostico-horas">
       <div class="col-3">
         <i class="fa-solid fa-cloud-rain"></i>
         <p>26°</p>
@@ -104,8 +106,8 @@
       </div>
     </div>
 
-    <!-- Indicadores extra -->
-    <div class="row justify-content-center my-4">
+    <!-- 🔹 Parte inferior centro: Indicadores extra -->
+    <div class="row justify-content-center my-4 indicadores">
       <div class="col-3 circle">
         <i class="fa-solid fa-umbrella"></i>
         <p>85%</p>
@@ -125,20 +127,20 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
-<!-- Instrucciones -->
+<!-- 🔹 Instrucciones -->
 <div class="accordion" id="accordionExample">
   <div class="accordion-item">
     <h2 class="accordion-header" id="headingOne">
       <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-        Fremeworks que pueden usar y herramientas
+        Frameworks que pueden usar y herramientas
       </button>
     </h2>
     <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
       <div class="accordion-body">
         <strong>Iconos</strong> <a href="https://fontawesome.com/search?q=search&o=r">https://fontawesome.com/search?q=search&o=r</a> <br>
         <strong>Frameworks</strong> <a href="https://getbootstrap.com/docs/5.0/getting-started/introduction/">https://getbootstrap.com/docs/5.0/getting-started/introduction/</a>
-        <p>Si tienen algun otro que quieran probar o usar son libres de hacerlo</p> <br>
-        <p>Por favor no olviden minimamente comentar su codigo, para que no se pierdan</p>
+        <p>Si tienen algún otro que quieran probar o usar son libres de hacerlo</p> <br>
+        <p>Por favor no olviden mínimamente comentar su código, para que no se pierdan</p>
       </div>
     </div>
   </div>
@@ -150,7 +152,7 @@
     </h2>
     <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
       <div class="accordion-body">
-        <strong>Maritza</strong> Tu haras la version de telefono movil, por lo que debes de hacer un diseño responsivo, que se adapte a pantallas pequeñas. usaras <code>@media (max-width: 768px) { ... }</code> investiga bien, la idea es que trabaje sobre el mismo html pero con diferentes estilos
+        <strong>Maritza</strong> Tú harás la versión de teléfono móvil, por lo que debes hacer un diseño responsivo que se adapte a pantallas pequeñas. Usarás <code>@media (max-width: 768px) { ... }</code>. Investiga bien, la idea es que trabaje sobre el mismo HTML pero con diferentes estilos.
       </div>
     </div>
   </div>
@@ -162,12 +164,12 @@
     </h2>
     <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
       <div class="accordion-body">
-        <strong>Atkis</strong> Tu haras la version de escritorio, por lo que debes de hacer un diseño que se adapte a pantallas grandes. usaras <code>@media (min-width: 769px) { ... }</code> investiga bien, la idea es que trabaje sobre el mismo html pero con diferentes estilos.
+        <strong>Atkis</strong> Tú harás la versión de escritorio, por lo que debes hacer un diseño que se adapte a pantallas grandes. Usarás <code>@media (min-width: 769px) { ... }</code>. Investiga bien, la idea es que trabaje sobre el mismo HTML pero con diferentes estilos.
       </div>
     </div>
   </div>
 </div>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-</body>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 </html>

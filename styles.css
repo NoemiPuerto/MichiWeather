@@ -1,121 +1,211 @@
-/* 🔹 Importar Inter desde Google Fonts */
+/* 🔹 Importar fuente Inter desde Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
-/* 🔹 General */
+/* 🔹 Estilos generales del cuerpo */
 body {
-  font-family: 'Inter', Arial, Helvetica, sans-serif;
-  background: #f5f5f5;
-  color: #333;
-  font-weight: 400; /* Peso normal por defecto */
+  font-family: 'Inter', Arial, Helvetica, sans-serif; /* Fuente principal */
+  background: #f5f5f5; /* Color de fondo claro */
+  color: #333; /* Color de texto oscuro */
+  font-weight: 400; /* Peso normal del texto */
 }
 
 /* 🔹 Títulos */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Inter', Arial, Helvetica, sans-serif;
-  font-weight: 700; /* Negrita */
+  font-family: 'Inter', Arial, Helvetica, sans-serif; /* Fuente para títulos */
+  font-weight: 700; /* Negrita para destacar */
 }
 
 /* 🔹 Navbar */
 .logo {
-  width: 150px;   /* logo pequeño */
-  height: auto;
+  width: 150px; /* Ancho del logo */
+  height: auto; /* Altura automática proporcional */
 }
-.moon {
-  width: 40px;
+.moon, .profile {
+  width: 40px; /* Tamaño de íconos */
   height: 40px;
-  border-radius: 50%;
-}
-.profile {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
+  border-radius: 50%; /* Íconos redondos */
 }
 
 /* 🔹 Círculo central del clima */
 .weather-circle {
-  position: relative; /* Cambié de right a relative para posicionar el gatito */
-  width: 250px;
+  position: relative; /* Permite posicionar elementos dentro */
+  width: 250px; /* Tamaño del círculo */
   height: 250px;
-  border-radius: 50%;
-  overflow: hidden; /* recorta en círculo */
-  margin: 20px auto;
+  border-radius: 50%; /* Forma circular */
+  overflow: hidden; /* Recorta contenido fuera del círculo */
+  margin: 20px auto; /* Centrado con margen vertical */
 }
-
-/* Fondo del círculo */
 .weather-circle .background {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* ajusta la imagen */
+  width: 100%; /* Ocupa todo el ancho */
+  height: 100%; /* Ocupa todo el alto */
+  object-fit: cover; /* Ajusta imagen sin deformarla */
 }
-
-/* Gatito encima del fondo */
 .weather-circle .cat {
-  position: absolute;
-  bottom: 0;  
-  left: 50%;
-  transform: translateX(-50%);
-  width: 150px;
+  position: absolute; /* Posicionamiento dentro del círculo */
+  bottom: 0; /* Pegado abajo */
+  left: 50%; /* Centrado horizontalmente */
+  transform: translateX(-50%); /* Ajuste fino para centrar */
+  width: 150px; /* Tamaño del gato */
 }
 
 /* 🔹 Temperaturas */
 .max {
-  font-family: 'Inter', Arial, Helvetica, sans-serif;
-  font-weight: 700;
+  font-weight: 700; /* Negrita para máxima */
 }
 .min {
-  font-family: 'Inter', Arial, Helvetica, sans-serif;
-  font-weight: 400;
-  color: gray;
+  font-weight: 400; /* Normal para mínima */
+  color: gray; /* Color gris para contraste */
 }
 
 /* 🔹 Indicadores (círculos pequeños) */
 .circle {
-  background: #ccc;
-  border-radius: 50%;
-  width: 100px;   /* ancho fijo */
-  height: 100px;  /* alto fijo */
-  display: flex;  
-  flex-direction: column; /* icono arriba, texto abajo */
-  align-items: center;
-  justify-content: center;
-  margin: 10px auto; /* centrado */
-  font-family: 'Inter', Arial, Helvetica, sans-serif;
-  font-weight: 400;
-  font-size: 0.9rem;
+  background: #ccc; /* Fondo gris claro */
+  border-radius: 50%; /* Forma circular */
+  width: 100px; /* Ancho fijo */
+  height: 100px; /* Alto fijo */
+  display: flex; /* Flexbox para centrar contenido */
+  flex-direction: column; /* Ícono arriba, texto abajo */
+  align-items: center; /* Centrado horizontal */
+  justify-content: center; /* Centrado vertical */
+  margin: 10px auto; /* Margen y centrado */
+  font-size: 0.9rem; /* Tamaño de texto */
 }
-
 .circle i {
-  font-size: 1.5rem;
-  margin-bottom: 5px;
+  font-size: 1.5rem; /* Tamaño del ícono */
+  margin-bottom: 5px; /* Espacio debajo del ícono */
 }
 
-/* 🔹 Responsive móvil */
+/* 🔹 Estilos para pantallas pequeñas (móvil) */
 @media (max-width: 768px) {
   .weather-circle {
-    width: 180px;
+    width: 180px; /* Círculo más pequeño */
     height: 180px;
   }
   .weather-circle .cat {
-    width: 120px;
+    width: 120px; /* Gato más pequeño */
   }
   h1 {
-    font-size: 2rem;
+    font-size: 2rem; /* Temperatura principal más pequeña */
   }
 }
 
-/* 🔹 Responsive escritorio */
+/* 🔹 Estilos para pantallas grandes (escritorio) */
 @media (min-width: 769px) {
-  main {
-    max-width: 900px;
+  main.contenido-escritorio {
+    max-width: 1100px; /* Ancho máximo del contenido */
+    margin: 0 auto; /* Centrado horizontal */
+    padding: 20px; /* Espaciado interno */
+    display: grid; /* Layout en cuadrícula */
+    grid-template-columns: 1fr 2fr; /* Dos columnas: izquierda y derecha */
+    grid-template-rows: auto auto auto; /* Tres filas automáticas */
+    gap: 1px; /* Espacio entre elementos */
+  }
+
+  .navbar {
+    justify-content: start; /* Alinea el contenido a la izquierda */
+    padding-left: 20px; /* Espacio desde el borde izquierdo */
+  }
+  .navbar-brand {
+    margin-right: 100px; /* Espacio entre logo y menú */
+  }
+  .navbar-nav {
+    flex-direction: row; /* Menú horizontal */
+    gap: 10px; /* Separación entre enlaces */
+  }
+  .navbar-nav .nav-link {
+    font-size: 3.1rem; /* Tamaño de texto del menú */
+    padding: 10px 10px; /* Espaciado interno de los enlaces */
+  }
+
+  .info-clima {
+    grid-column: 1 / 2; /* Ocupa la columna izquierda */
+    grid-row: 1 / 3; /* Ocupa dos filas verticales */
+    text-align: left; /* Alineación del texto */
+  }
+  .info-clima h2 {
+    font-size: 4rem; /* Tamaño grande para la ciudad */
+    margin-bottom: 0; /* Sin espacio debajo */
+  }
+  .info-clima .text-muted {
+    font-size: 2.5rem; /* Tamaño grande para el clima */
+    margin-top: 0; /* Sin espacio arriba */
+    color: #666; /* Color gris medio */
   }
   .weather-circle {
-    width: 300px;
-    height: 300px;
+    margin: 1px 0; /* Espacio vertical reducido */
+    width: 400px; /* Círculo más grande que en móvil */
+    height: 400px;
   }
   .weather-circle .cat {
-    width: 180px;
+    width: 320px; /* Gato más grande */
   }
-  h1 {
-    font-size: 3rem;
+  .temperaturas h1 {
+    font-size: 5rem; /* Temperatura principal muy grande */
+    margin: 0px 0; /* Espacio vertical reducido */
   }
-}
+  .temperaturas .max,
+  .temperaturas .min {
+    font-size: 2.3rem; /* Tamaño de máximas y mínimas */
+    margin-right: 20px; /* Separación entre números */
+  }
+
+  .selector-tiempo {
+    grid-column: 2 / 3; /* Columna derecha */
+    grid-row: 1 / 2; /* Fila superior */
+    display: flex; /* Alineación horizontal */
+    justify-content: center; /* Centrado horizontal */
+    margin-bottom: -50px; /* Espacio debajo */
+  }
+  .btn-group {
+    display: flex; /* Botones en fila */
+    gap: 10px; /* Separación entre botones */
+  }
+  .btn-group .btn {
+    padding: 1px 1px; /* Botones compactos y horizontales */
+    font-size: 2rem; /* Tamaño de texto */
+    border-radius: 20px; /* Bordes redondeados */
+    background-color: #5e5c5c; /* Fondo oscuro */
+    color: white; /* Texto blanco */
+    border: none; /* Sin borde */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: background-color 0.3s ease; /* Animación al pasar el mouse */
+  }
+  .btn-group .btn:hover {
+    background-color: #7a7979; /* Color al pasar el mouse */
+  }
+
+  .pronostico-horas {
+    grid-column: 2 / 3; /* Columna derecha */
+    grid-row: 2 / 3; /* Fila del medio */
+    display: flex; /* Íconos en fila */
+    justify-content: space-between; /* Espaciados uniformemente */
+    align-items: center; /* Alineados verticalmente */
+    margin-top: 10px; /* Espacio arriba */
+  }
+  .pronostico-horas .col-3 {
+    width: 150px; /* Ancho de cada ítem */
+    text-align: center; /* Centrado de contenido */
+  }
+  .pronostico-horas i {
+    font-size: 3.8rem; /* Íconos grandes */
+    margin-bottom: 30px; /* Espacio debajo del ícono */
+    color: #000000; /* Color oscuro */
+  }
+  .pronostico-horas p {
+    font-size: 4.3rem; /* Tamaño de texto de temperatura */
+    margin: 0; /* Sin margen */
+  }
+
+  .indicadores {
+    grid-column: 2 / 4; /* Columna derecha */
+    grid-row: 3 / 4; /* Fila inferior */
+    display: flex; /* Íconos en fila */
+    justify-content: space-between; /* Espaciados uniformemente */
+    align-items: center; /* Alineados verticalmente */
+    margin-top: 10px; /* Espacio arriba */
+  }
+  .indicadores .col-3.circle {
+    background: #e0e0e0; /* Fondo claro */
+    width: 220px; /* Tamaño compacto */
+    height: 220px;
+    font-size: 3rem
