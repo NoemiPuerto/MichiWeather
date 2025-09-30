@@ -18,12 +18,10 @@
 <body>
 
   <!-- 🔹 NAVBAR -->
-  <nav class="navbar navbar-expand-lg navbar-light">
-    <div class="container-fluid">
-      <!-- Logo -->
-      <a class="navbar-brand" href="#">
-        <img class="logo" src="./assets/Logo/MichiWeather.png" alt="MichiWeather logo">
-      </a>
+<nav class="navbar navbar-expand-lg navbar-light">
+  <div class="container-fluid">
+    <!-- Logo -->
+    <a class="navbar-brand logo-text" href="#">MichiWeather</a>
 
       <!-- Botón menu -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -50,10 +48,10 @@
         <!-- Menú principal -->
         <ul class="navbar-nav order-2 order-lg-1">
           <li class="nav-item">
-            <a class="nav-link active" href="#">Inicio</a>
+            <a class="nav-link desktop-bold" href="#">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Ubicaciones</a>
+            <a class="nav-link desktop-bold" href="#">Ubicaciones</a>
           </li>
         </ul>
 
@@ -62,71 +60,86 @@
   </nav>
 
   <!-- 🔹 SECCIÓN PRINCIPAL DEL CLIMA -->
-  <main class="container text-center my-4">
-    <h2 class="location">Cancún</h2>
-    <h3 class="estado">Lluvia</h3>
+  <main class="container my-4">
+    <div class="row align-items-center">
+      
+      <!-- 🔹 Columna izquierda -->
+        <div class="col-lg-6 text-center text-lg-start left-column">
+          
+          <!-- Textos de ubicación y estado -->
+          <div class="location-container">
+            <h2 class="location">Cancún</h2>
+            <h3 class="estado">Lluvia</h3>
+          </div>
 
-    <!-- Fondo + gato -->
-    <div class="weather-circle mx-auto">
-      <img class="background" src="./assets/Fondos/lluvioso.png" alt="fondo clima">
-      <img class="cat" src="./assets/Michis/Michi_negro/gato_lluvia.png" alt="gatito clima">
+          <!-- Círculo del clima -->
+          <div class="weather-circle">
+            <img class="background" src="./assets/Fondos/lluvioso.png" alt="fondo clima">
+            <img class="cat" src="./assets/Michis/Michi_negro/gato_lluvia.png" alt="gatito clima">
+          </div>
+
+          <!-- Temperaturas -->
+          <div class="temp-container">
+            <h1 class="main-temp">27°</h1>
+            <div class="temp-minmax">
+              <span class="max">31°</span>
+              <span class="min">23°</span>
+            </div>
+          </div>
+
+        </div>
+
+      <!-- 🔹 Columna derecha -->
+      <div class="col-lg-6 text-center">
+        <!-- Botones -->
+        <div class="btn-container my-3">
+            <button class="btn-hoy">Hoy</button>
+            <button class="btn-semana">Semana</button>
+        </div>
+
+        <!-- Pronóstico por horas -->
+        <div class="hourly-forecast d-flex justify-content-center flex-nowrap overflow-auto my-3">
+          <div class="hourly-item text-center now">
+            <p class="hour">Now</p>
+            <img class="weather-icon" src="./assets/Iconos/lluvia_icon.png" alt="lluvia">
+            <p class="temp">22°</p>
+          </div>
+          <div class="hourly-item text-center">
+            <p class="hour">11:00</p>
+            <img class="weather-icon" src="./assets/Iconos/nublado_icon.png" alt="nublado">
+            <p class="temp">31°</p>
+          </div>
+          <div class="hourly-item text-center">
+            <p class="hour">14:00</p>
+            <img class="weather-icon" src="./assets/Iconos/llovizna_icon.png" alt="llovizna">
+            <p class="temp">25°</p>
+          </div>
+          <div class="hourly-item text-center">
+            <p class="hour">17:00</p>
+            <img class="weather-icon" src="./assets/Iconos/granizo_icon.png" alt="granizo">
+            <p class="temp">29°</p>
+          </div>
+        </div>
+
+
+        <!-- Indicadores -->
+        <div class="stats d-flex justify-content-center flex-nowrap gap-4 my-4">
+          <div class="circle text-center">
+            <img class="stat-icon" src="./assets/Iconos/solar_umbrella-broken.png" alt="lluvia">
+            <p class="stat-text">75%</p>
+          </div>
+          <div class="circle text-center">
+            <img class="stat-icon" src="./assets/Iconos/solar_cloud-waterdrops-outline.png" alt="humedad">
+            <p class="stat-text">80%</p>
+          </div>
+          <div class="circle text-center">
+            <img class="stat-icon" src="./assets/Iconos/fluent_weather-squalls-24-regular.png" alt="viento">
+            <p class="stat-text">30km</p>
+          </div>
+        </div>
+      </div>
+
     </div>
-
-    <!-- Temperaturas principales y secundarias -->
-    <div class="temp-container">
-      <h1 class="main-temp">26°</h1>
-      <div class="temp-minmax">
-        <span class="max">30°</span>
-        <span class="min">23°</span>
-      </div>
-    </div>
-
-    <!-- Botones -->
-    <div class="btn-group my-3">
-      <button class="btn btn-dark">Hoy</button>
-      <button class="btn btn-secondary">Semana</button>
-    </div>
-
-    <!-- Pronóstico por horas -->
-    <div class="hourly-forecast d-flex justify-content-between flex-nowrap overflow-auto my-3">
-      <div class="hourly-item text-center">
-        <p class="hour">Now</p>
-        <img class="weather-icon" src="./assets/Iconos/lluvia_icon.png" alt="lluvia">
-        <p class="temp">26°</p>
-      </div>
-      <div class="hourly-item text-center">
-        <p class="hour">11:00</p>
-        <img class="weather-icon" src="./assets/Iconos/nublado_icon.png" alt="nublado">
-        <p class="temp">30°</p>
-      </div>
-      <div class="hourly-item text-center">
-        <p class="hour">14:00</p>
-        <img class="weather-icon" src="./assets/Iconos/llovizna_icon.png" alt="llovizna">
-        <p class="temp">25°</p>
-      </div>
-      <div class="hourly-item text-center">
-        <p class="hour">17:00</p>
-        <img class="weather-icon" src="./assets/Iconos/granizo_icon.png" alt="granizo">
-        <p class="temp">27°</p>
-      </div>
-    </div>
-
-    <!-- Indicadores -->
-    <div class="stats d-flex justify-content-between flex-nowrap overflow-auto my-4">
-      <div class="circle text-center">
-        <img class="stat-icon" src="./assets/Iconos/solar_umbrella-broken.png" alt="lluvia">
-        <p class="stat-text">85%</p>
-      </div>
-      <div class="circle text-center">
-        <img class="stat-icon" src="./assets/Iconos/solar_cloud-waterdrops-outline.png" alt="humedad">
-        <p class="stat-text">30%</p>
-      </div>
-      <div class="circle text-center">
-        <img class="stat-icon" src="./assets/Iconos/fluent_weather-squalls-24-regular.png" alt="viento">
-        <p class="stat-text">30km</p>
-      </div>
-    </div>
-
   </main>
 
   <!-- Bootstrap JS -->
