@@ -18,22 +18,19 @@
 <body>
 
   <!-- 🔹 NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-light">
-  <div class="container-fluid">
-    <!-- Logo -->
-    <a class="navbar-brand logo-text" href="#">MichiWeather</a>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand logo-text" href="#">MichiWeather</a>
 
-      <!-- Botón menu -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
               data-bs-target="#navbarNav" aria-controls="navbarNav"
               aria-expanded="false" aria-label="Toggle navigation">
-        <img class="menu" src="./assets/Iconos/menu_icon.png" alt="menu">
+        <img class="menu" data-icon="menu" src="./assets/Iconos/menu_icon.svg" alt="menu">
       </button>
 
-      <!-- Contenido colapsable -->
       <div class="collapse navbar-collapse flex-column flex-lg-row justify-content-between" id="navbarNav">
 
-        <!-- 🔹 Bloque derecho (buscador + íconos) -->
+        <!-- Bloque derecho -->
         <div class="d-flex align-items-center order-1 order-lg-2 mb-2 mb-lg-0">
           <form class="d-flex align-items-center me-2 search-form">
             <input class="form-control search-input" type="search" placeholder="Buscar ciudad">
@@ -41,108 +38,100 @@
               <i class="fa fa-search"></i>
             </button>
           </form>
-          <img class="moon" src="./assets/Iconos/modo_oscuro_icon.png" alt="moon">
-          <img class="profile" src="./assets/Iconos/Porfile_icon.png" alt="perfil">
+          <!-- Botón Dark Mode -->
+          <img class="moon" id="darkModeToggle" data-icon="luna" src="./assets/Iconos/luna_icon.svg" alt="moon">
+          <img class="profile" data-icon="user" src="./assets/Iconos/user_icon.svg" alt="perfil">
         </div>
 
-        <!-- Menú principal -->
+        <!-- Menú -->
         <ul class="navbar-nav order-2 order-lg-1">
-          <li class="nav-item">
-            <a class="nav-link desktop-bold" href="#">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link desktop-bold" href="#">Ubicaciones</a>
-          </li>
+          <li class="nav-item"><a class="nav-link desktop-bold" href="#">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link desktop-bold" href="#">Ubicaciones</a></li>
         </ul>
 
       </div>
     </div>
   </nav>
 
-  <!-- 🔹 SECCIÓN PRINCIPAL DEL CLIMA -->
+  <!-- 🔹 SECCIÓN PRINCIPAL -->
   <main class="container my-4">
     <div class="row align-items-center">
       
-      <!-- 🔹 Columna izquierda -->
-        <div class="col-lg-6 text-center text-lg-start left-column">
-          
-          <!-- Textos de ubicación y estado -->
-          <div class="location-container">
-            <h2 class="location">Cancún</h2>
-            <h3 class="estado">Lluvia</h3>
-          </div>
-
-          <!-- Círculo del clima -->
-          <div class="weather-circle">
-            <img class="background" src="./assets/Fondos/lluvioso.png" alt="fondo clima">
-            <img class="cat" src="./assets/Michis/Michi_negro/gato_lluvia.png" alt="gatito clima">
-          </div>
-
-          <!-- Temperaturas -->
-          <div class="temp-container">
-            <h1 class="main-temp">27°</h1>
-            <div class="temp-minmax">
-              <span class="max">31°</span>
-              <span class="min">23°</span>
-            </div>
-          </div>
-
+      <!-- Columna izquierda -->
+      <div class="col-lg-6 text-center text-lg-start left-column">
+        <div class="location-container">
+          <h2 class="location">Cancún</h2>
+          <h3 class="estado">Lluvia</h3>
         </div>
 
-      <!-- 🔹 Columna derecha -->
-      <div class="col-lg-6 text-center">
-        <!-- Botones -->
-        <div class="btn-container my-3">
-            <button class="btn-hoy">Hoy</button>
-            <button class="btn-semana">Semana</button>
+        <div class="weather-circle">
+          <img class="background" src="./assets/Fondos/lluvioso.png" alt="fondo clima">
+          <img class="cat" src="./assets/Michis/Michi_negro/gato_lluvia.png" alt="gatito clima">
         </div>
 
-        <!-- Pronóstico por horas -->
-        <div class="hourly-forecast d-flex justify-content-center flex-nowrap overflow-auto my-3">
-          <div class="hourly-item text-center now">
-            <p class="hour">Now</p>
-            <img class="weather-icon" src="./assets/Iconos/lluvia_icon.png" alt="lluvia">
-            <p class="temp">22°</p>
-          </div>
-          <div class="hourly-item text-center">
-            <p class="hour">11:00</p>
-            <img class="weather-icon" src="./assets/Iconos/nublado_icon.png" alt="nublado">
-            <p class="temp">31°</p>
-          </div>
-          <div class="hourly-item text-center">
-            <p class="hour">14:00</p>
-            <img class="weather-icon" src="./assets/Iconos/llovizna_icon.png" alt="llovizna">
-            <p class="temp">25°</p>
-          </div>
-          <div class="hourly-item text-center">
-            <p class="hour">17:00</p>
-            <img class="weather-icon" src="./assets/Iconos/granizo_icon.png" alt="granizo">
-            <p class="temp">29°</p>
-          </div>
-        </div>
-
-
-        <!-- Indicadores -->
-        <div class="stats d-flex justify-content-center flex-nowrap gap-4 my-4">
-          <div class="circle text-center">
-            <img class="stat-icon" src="./assets/Iconos/solar_umbrella-broken.png" alt="lluvia">
-            <p class="stat-text">75%</p>
-          </div>
-          <div class="circle text-center">
-            <img class="stat-icon" src="./assets/Iconos/solar_cloud-waterdrops-outline.png" alt="humedad">
-            <p class="stat-text">80%</p>
-          </div>
-          <div class="circle text-center">
-            <img class="stat-icon" src="./assets/Iconos/fluent_weather-squalls-24-regular.png" alt="viento">
-            <p class="stat-text">30km</p>
+        <div class="temp-container">
+          <h1 class="main-temp">27°</h1>
+          <div class="temp-minmax">
+            <span class="max">31°</span>
+            <span class="min">23°</span>
           </div>
         </div>
       </div>
 
+      <!-- Columna derecha -->
+      <div class="col-lg-6 text-center">
+        <div class="btn-container my-3">
+          <button class="btn-hoy">Hoy</button>
+          <button class="btn-semana">Semana</button>
+        </div>
+
+        <!-- Pronóstico -->
+        <div class="hourly-forecast d-flex justify-content-center flex-nowrap overflow-auto my-3">
+          <div class="hourly-item text-center now">
+            <p class="hour">Now</p>
+            <img class="weather-icon" data-icon="lluvia" src="./assets/Iconos/lluvia_icon.svg" alt="lluvia">
+            <p class="temp">22°</p>
+          </div>
+          <div class="hourly-item text-center">
+            <p class="hour">11:00</p>
+            <img class="weather-icon" data-icon="nublado" src="./assets/Iconos/nublado_icon.svg" alt="nublado">
+            <p class="temp">31°</p>
+          </div>
+          <div class="hourly-item text-center">
+            <p class="hour">14:00</p>
+            <img class="weather-icon" data-icon="llovizna" src="./assets/Iconos/llovizna_icon.svg" alt="llovizna">
+            <p class="temp">25°</p>
+          </div>
+          <div class="hourly-item text-center">
+            <p class="hour">17:00</p>
+            <img class="weather-icon" data-icon="granizo" src="./assets/Iconos/granizo_icon.svg" alt="granizo">
+            <p class="temp">29°</p>
+          </div>
+        </div>
+
+        <!-- Indicadores -->
+        <div class="stats d-flex justify-content-center flex-nowrap gap-4 my-4">
+          <div class="circle text-center">
+            <img class="stat-icon" data-icon="sombrilla" src="./assets/Iconos/sombrilla_icon.svg" alt="sombrilla">
+            <p class="stat-text">75%</p>
+          </div>
+          <div class="circle text-center">
+            <img class="stat-icon" data-icon="humedad" src="./assets/Iconos/humedad_icon.svg" alt="humedad">
+            <p class="stat-text">80%</p>
+          </div>
+          <div class="circle text-center">
+            <img class="stat-icon" data-icon="viento" src="./assets/Iconos/viento_icon.svg" alt="viento">
+            <p class="stat-text">30km</p>
+          </div>
+        </div>
+      </div>
     </div>
   </main>
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- JS externo -->
+  <script src="script.js"></script>
 </body>
 </html>
